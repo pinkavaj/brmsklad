@@ -95,9 +95,6 @@ p {
 	text-decoration: none;
 	vertical-align: bottom;
 }
-#header h1 a:hover {
-	color: #fff;
-}
 #content{
 	background: #fff;
 	clear: both;
