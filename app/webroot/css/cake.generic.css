@@ -735,3 +735,15 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+
+#datatables_paginate a {
+	margin: 10px;
+}
+
+#datatables_filter {
+	text-align: right;
+}
+
+#datatables_filter input {
+	width: 300px;
+}

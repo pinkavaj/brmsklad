@@ -9,11 +9,16 @@
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('cake.generic');
-
+		echo $this->Html->script(array('jquery.min','jquery.dataTables.min'));
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#datatables').dataTable({iDisplayLength:50});
+	});
+	</script>
 </head>
 <body>
 	<div id="container">

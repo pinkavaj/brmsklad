@@ -18,14 +18,14 @@
 ?>
 <div class="<?php echo $pluralVar; ?> index">
 <h2><?php echo $pluralHumanName; ?></h2>
-<table cellpadding="0" cellspacing="0">
-<tr>
+<table cellpadding="0" cellspacing="0" id="datatables">
+<thead>
 <?php foreach ($scaffoldFields as $_field): ?>
 	<?php if($_field == "id") continue; ?>
-	<th><?php echo $this->Paginator->sort($_field); ?></th>
+	<th><?php echo $_field; ?></th>
 <?php endforeach; ?>
 	<th><?php echo __d('cake', 'Actions'); ?></th>
-</tr>
+</thead>
 <?php
 foreach (${$pluralVar} as ${$singularVar}):
 	echo '<tr>';
@@ -62,18 +62,6 @@ endforeach;
 
 ?>
 </table>
-	<p><?php
-	echo $this->Paginator->counter(array(
-		'format' => __d('cake', 'Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?></p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __d('cake', 'previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__d('cake', 'next') .' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
 </div>
 <div class="actions">
 	<h3><?php echo __d('cake', 'Actions'); ?></h3>
