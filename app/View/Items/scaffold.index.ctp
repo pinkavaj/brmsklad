@@ -43,7 +43,7 @@ foreach (${$pluralVar} as ${$singularVar}):
 			}
 			if ($isKey !== true) {
 				$value = h(${$singularVar}[$modelClass][$_field]);
-				if(is_numeric($value)) $value = sprintf("%02d", $value);
+				if(is_numeric($value)) $value = sprintf("%03d", $value);
 				echo '<td>' . $value . '</td>';
 			}
 		}
