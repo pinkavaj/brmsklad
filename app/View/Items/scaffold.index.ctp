@@ -22,7 +22,7 @@
 <thead>
 <?php foreach ($scaffoldFields as $_field): ?>
 	<?php if($_field == "id") continue; ?>
-	<th><?php echo $_field; ?></th>
+	<th><?php echo $_field; ?><br/><input class="search_init" type="text" name="<?php echo $_field; ?>" /></th>
 <?php endforeach; ?>
 	<th><?php echo __d('cake', 'Actions'); ?></th>
 </thead>
@@ -61,6 +61,13 @@ foreach (${$pluralVar} as ${$singularVar}):
 endforeach;
 
 ?>
+<tfoot>
+<?php foreach ($scaffoldFields as $_field): ?>
+        <?php if($_field == "id") continue; ?>
+        <th><?php echo $_field; ?></th>
+<?php endforeach; ?>
+        <th><?php echo __d('cake', 'Actions'); ?></th>
+</tfoot>
 </table>
 </div>
 <div class="actions">
