@@ -42,7 +42,9 @@ foreach (${$pluralVar} as ${$singularVar}):
 				}
 			}
 			if ($isKey !== true) {
-				echo '<td>' . h(${$singularVar}[$modelClass][$_field]) . '</td>';
+				$value = h(${$singularVar}[$modelClass][$_field]);
+				if(is_numeric($value)) $value = sprintf("%02d", $value);
+				echo '<td>' . $value . '</td>';
 			}
 		}
 
