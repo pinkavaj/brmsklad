@@ -56,6 +56,13 @@
         <div id="container">
             <div id="header">
                 <h1><?php echo $this->Html->image("brmlab.png",array("height" => "30px")); ?><?php echo $this->Html->link('  BrmSklad', "/"); ?></h1>
+		<ul id="mainmenu">
+			<li><?php echo $this->html->link('Items', "/items"); ?></li>
+			<li><?php echo $this->html->link('Books', "/books"); ?></li>
+			<li><?php echo $this->html->link('Users', "/users"); ?></li>
+			<li><?php echo $this->html->link('Languages', "/languages"); ?></li>
+		</ul>
+		<br class="clear"/>
             </div>
             <div id="content">
 

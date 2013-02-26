@@ -1,4 +1,25 @@
 @charset "utf-8";
+
+ul#mainmenu li a, ul#mainmenu li {
+	text-decoration: none;
+	display: block;
+	width: 100px;
+	height: 25px;
+	text-align: center;
+	float: left;
+	margin: 0;
+	padding: 0;
+	padding-top: 5px;
+}
+
+ul#mainmenu li a:hover {
+	text-decoration: underline;
+}
+
+br.clear {
+	clear: both;
+}
+
 /**
  *
  * Generic CSS for CakePHP
