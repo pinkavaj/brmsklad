@@ -1,7 +1,43 @@
 BrmSklad
 =========
+Internal application for inventory management.
 
-Interní aplikace pro správu skladu
+Installation
+============
+
+USefull info is at:
+ * https://book.cakephp.org/2.0/en/installation.html
+ * https://book.cakephp.org/2.0/en/getting-started.html
+
+WWW server setup
+
+ * Setup php-cgi (or FastCGI on your HTTP server)
+ * Set document root to <SERVER_ROOT>/brmsklad/app/webroot
+ * Setup mod-rewrite: https://book.cakephp.org/2.0/en/installation/url-rewriting.html
+
+PHP dependencies
+
+For PostgreSQL install php-pgsql and enable extension=pdo_pgsql and extension=pgsql in php.ini
+For MySQL install and setup proper dependencies.
+
+Create cache directories, set them writable by HTTP server user.
+
+mkdir -p app/tmp/cache/models
+mkdir -p app/tmp/cache/persistent
+mkdir -p app/tmp/logs
+chown -R http:http app/tmp/
+
+CREATE USER brmsklad WITH PASSWORD 'SOME PASSWORD';
+CREATE DATABASE brmsklad;
+GRANT CONNECT ON DATABASE brmsklad TO brmsklad;
+GRANT ALL ON DATABASE brmsklad TO brmsklad;
+
+Create database objects using SQL in app/Config/Schema/db_schema.sql
+
+Configure connection to database, copy and edit database.php according Your database setup.
+
+cp lib/Cake/Console/Templates/skel/Config/database.php.default app/Config/database.php
+
 
 API
 ===
